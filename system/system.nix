@@ -3,6 +3,7 @@
 {
   imports =
    [
+     ./environment.nix
      ./boot/boot.nix
      ./networking/networking.nix
    ];

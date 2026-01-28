@@ -6,7 +6,6 @@
       ./hardware/hardware-configuration.nix
       ./hardware/hardware.nix
       ../../system/system.nix
-      ../../system/environment.nix
     ];
   
   fileSystems = {

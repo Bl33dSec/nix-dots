@@ -9,9 +9,11 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" "thinkpad-acpi" "acpi-call" ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.acpi_call config.boot.kernelPackages.tp_smapi ];
+
+  boot.kernelParams = [ "thinkpad_acpi.fan_control=1" ];
 
   fileSystems."/" =
     { device = "/dev/mapper/vg0-root";
