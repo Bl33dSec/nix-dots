@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  programs.zsh.enable = true;
+
   services.displayManager.ly.enable = true;
 
   services.desktopManager.cosmic.enable = true;

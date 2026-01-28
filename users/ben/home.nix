@@ -16,5 +16,6 @@
 	fastfetch
 	typst
 	cherrytree
+	burpsuite
     ];
 }

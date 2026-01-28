@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -15,6 +15,17 @@
     vim
     git
   ];
+
+  users.users.ben = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "power" "networkmanager" ];
+    shell = pkgs.zsh;
+    packages = with pkgs; [
+      tree
+    ];
+  };
+
+  nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11";

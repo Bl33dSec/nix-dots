@@ -26,13 +26,5 @@
       };
     };
   };
-
-  users.users.ben= {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "power" "networkmanager" ];
-    packages = with pkgs; [
-      tree
-    ];
-  };
 }
 

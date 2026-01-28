@@ -16,5 +16,14 @@
       ignoreDups = true;
       ignoreSpace = true;
     };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "darkblood";
+      plugins = [
+	"git"
+	"sudo"
+      ];
+    };
   };
 }

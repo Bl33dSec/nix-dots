@@ -3,6 +3,7 @@
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-25.11";
+        nur.url = "github:nix-community/NUR";
 
 	lanzaboote = {
             url = "github:nix-community/lanzaboote/v1.0.0";
@@ -15,7 +16,7 @@
         };
     };
 
-    outputs = { self, nixpkgs, home-manager, lanzaboote, ... }: {
+    outputs = { self, nixpkgs, home-manager, lanzaboote, nur, ... }: {
         nixosConfigurations.onix = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [
@@ -33,6 +34,8 @@
 		    enable = true;
 		    pkiBundle = "/var/lib/sbctl";
 		  };
+
+		  nixpkgs.overlays = [ nur.overlays.default ];
 		})
 
                 home-manager.nixosModules.home-manager
