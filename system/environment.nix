@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   services.displayManager.ly.enable = true;
@@ -10,9 +10,5 @@
   programs.firefox.preferences = {
     # disable libadwaita theming for Firefox
     "widget.gtk.libadwaita-colors.enabled" = false;
-  };
-
-  environment.variables = {
-    COSMIC_DISABLE_DIRECT_SCANOUT = "1";
   };
 }

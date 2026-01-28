@@ -15,6 +15,14 @@
 
   boot.kernelParams = [ "thinkpad_acpi.fan_control=1" ];
 
+  boot.initrd.luks.devices = {
+    luksroot = {
+      device = "/dev/disk/by-uuid/97f80c93-df0c-4c92-ba66-bc77b0de8deb";
+      preLVM = true;
+      allowDiscards = true;
+    };
+  };
+
   fileSystems."/" =
     { device = "/dev/mapper/vg0-root";
       fsType = "btrfs";
