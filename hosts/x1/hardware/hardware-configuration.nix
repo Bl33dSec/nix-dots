@@ -13,7 +13,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.acpi_call config.boot.kernelPackages.tp_smapi ];
 
-  boot.kernelParams = [ "thinkpad_acpi.fan_control=1" ];
+  boot.kernelParams = [ "quiet" "thinkpad_acpi.fan_control=1" ];
 
   boot.initrd.luks.devices = {
     luksroot = {
