@@ -1,15 +1,31 @@
 { pkgs, ... }:
 
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true; 
+      };
 
-  boot.plymouth.enable = true;
-  boot.initrd.systemd.enable = true;
+      efi = {
+        canTouchEfiVariables = true; 
+      };
 
-  boot.consoleLogLevel = 0;
+      timeout = 0;
+    };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+    plymouth = {
+      enable = true; 
+    };
+
+    initrd = {
+      systemd = {
+        enable = true; 
+      };
+    };
+
+    consoleLogLevel = 0; 
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 }
 

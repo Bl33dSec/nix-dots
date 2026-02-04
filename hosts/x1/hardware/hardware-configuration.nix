@@ -8,19 +8,25 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" "thinkpad-acpi" "acpi-call" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.acpi_call config.boot.kernelPackages.tp_smapi ];
+  boot = {
+    initrd = {
+      availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      kernelModules = [ "dm-snapshot" "thinkpad-acpi" "acpi-call" ];
 
-  boot.kernelParams = [ "quiet" "thinkpad_acpi.fan_control=1" ];
-
-  boot.initrd.luks.devices = {
-    luksroot = {
-      device = "/dev/disk/by-uuid/97f80c93-df0c-4c92-ba66-bc77b0de8deb";
-      preLVM = true;
-      allowDiscards = true;
+      luks = { 
+        devices = {
+          luksroot = {
+            device = "/dev/disk/by-uuid/97f80c93-df0c-4c92-ba66-bc77b0de8deb";
+            preLVM = true;
+            allowDiscards = true;
+          };
+        };
+      };
     };
+
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ config.boot.kernelPackages.acpi_call config.boot.kernelPackages.tp_smapi ];
+    kernelParams = [ "quiet" "thinkpad_acpi.fan_control=1" ];
   };
 
   fileSystems."/" =

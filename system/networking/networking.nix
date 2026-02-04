@@ -1,14 +1,19 @@
 { ... }:
 
 {
-  networking.hostName = "onix";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "onix";
 
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ ];
-    allowedUDPPorts = [ ];
-    allowPing = false;
+    networkmanager = {
+      enable = true;
+    };
+
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ ];
+      allowedUDPPorts = [ ];
+      allowPing = false;
+    };
   };
 }
 
