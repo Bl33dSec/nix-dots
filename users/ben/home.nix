@@ -1,21 +1,24 @@
 { pkgs, ... }:
 
 {
-    imports = [
-      ./programs
-      ./shell
-    ];
+  imports = [
+    ./programs
+    ./shell
+  ];
 
-    home.username = "ben";
-    home.homeDirectory = "/home/ben";
-    programs.git.enable = true;
-    home.stateVersion = "25.11";
+  programs.git.enable = true;
 
-    home.packages = with pkgs; [
-	tmux
-	fastfetch
-	typst
-	cherrytree
-	burpsuite
+  home = {
+    username = "ben";
+    homeDirectory = "/home/ben";
+    stateVersion = "25.11";
+
+    packages = with pkgs; [
+      tmux
+      fastfetch
+      typst
+      cherrytree
+      burpsuite
     ];
+  };
 }

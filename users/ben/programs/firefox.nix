@@ -14,54 +14,44 @@
       };
 
       settings = {
+        "privacy.resistFingerprinting"  = true;
         "widget.gtk.libadwaita-colors.enabled" = false;
       };
 
-      preferences = {
-        "privacy.resistFingerprinting"  = true;
-      };
+      bookmarks = {
+        force = true;
+        settings = [
+          {
+            name = "Nix sites";
+            toolbar = true;
+            bookmarks = [
+              {
+                name = "Nix wiki";
+                tags = [ "nix" "wiki" ];
+                url = "https://wiki.nixos.org/";
+              }
 
-      policies = {
-        DisableFirefoxAccounts = true;
-        DisableTelemetry = true;
-        HardwareAcceleration = false;
-	OfferToSaveLogins = false;
+              {
+                name = "Nix pkgs";
+                tags = [ "nix" "pkgs" ];
+                url = "https://search.nixos.org/packages";
+              }
+
+              {
+                name = "Hm options";
+                url = "https://nix-community.github.io/home-manager/options.html";
+              }
+            ];
+          }
+        ];
       };
     };
 
-    profiles.default.search = {
-      force = true;
-      default = "DuckDuckGo";
-      privateDefault = "DuckDuckGo";
-
-      engines = {
-        "Nix Packages" = {
-          urls = [
-            {
-              template = "https://search.nixos.org/packages";
-              params = [
-                { name = "channel"; value = "25.11"; }
-                { name = "query";   value = "{searchTerms}"; }
-              ];
-            }
-          ];
-
-          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@np" ];
-        };
-
-        "NixOS Wiki" = {
-          urls = [
-            {
-              template = "https://wiki.nixos.org/w/index.php";
-              params = [ { name = "search"; value = "{searchTerms}"; } ];
-            }
-          ];
-
-          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@nw" ];
-        };
-      };
+    policies = {
+      DisableFirefoxAccounts = true;
+      DisableTelemetry = true;
+      HardwareAcceleration = false;
+      OfferToSaveLogins = false;
     };
   };
 }
