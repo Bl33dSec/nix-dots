@@ -6,10 +6,10 @@
     profiles.ben = {
       extensions = { 
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
-	  ublock-origin
-	  dashlane 
-	  wappalyzer
-	  foxyproxy-standard
+          ublock-origin
+          dashlane 
+          wappalyzer
+          foxyproxy-standard
         ];
       };
 
