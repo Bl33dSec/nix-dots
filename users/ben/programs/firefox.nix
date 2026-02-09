@@ -14,7 +14,6 @@
       };
 
       settings = {
-        "privacy.resistFingerprinting"  = true;
         "widget.gtk.libadwaita-colors.enabled" = false;
       };
 
@@ -48,8 +47,6 @@
     };
 
     policies = {
-      DisableFirefoxAccounts = true;
-      DisableTelemetry = true;
       HardwareAcceleration = false;
       OfferToSaveLogins = false;
     };
