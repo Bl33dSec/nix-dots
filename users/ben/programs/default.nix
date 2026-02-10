@@ -5,6 +5,5 @@
     ./configs.nix
     ./browsers
     ./editors
-    ./utils
   ];
 }
