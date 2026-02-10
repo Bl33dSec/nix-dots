@@ -2,6 +2,8 @@
 
 {
   imports = [
-    ./firefox.nix
+    ./browsers
+    ./editors
+    ./utils
   ];
 }
