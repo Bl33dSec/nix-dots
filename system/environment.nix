@@ -1,7 +1,15 @@
 { ... }:
 
 {
-  programs.zsh.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+    };
+
+    nix-ld = {
+      enable = true;
+    };
+  };
 
   services = {
     displayManager = {
