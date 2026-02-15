@@ -1,10 +1,11 @@
 { pkgs, ... }:
 
 {
-  # home.packages = with pkgs; [
-  #   ripgrep
-  #   fzf
-  # ];
+  home.packages = with pkgs; [
+    ripgrep
+    fzf
+    fd
+  ];
 
   programs.neovim = {
     enable = true;
