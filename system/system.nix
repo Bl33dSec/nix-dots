@@ -5,6 +5,7 @@
    [
      ./environment.nix
      ./boot/boot.nix
+     ./audio/pipewire.nix
      ./networking/networking.nix
      ./virtualisation/virtualisation.nix
    ];
