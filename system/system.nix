@@ -6,6 +6,7 @@
      ./environment.nix
      ./boot/boot.nix
      ./networking/networking.nix
+     ./virtualisation/virtualisation.nix
    ];
 
   time.timeZone = "Europe/Amsterdam";
