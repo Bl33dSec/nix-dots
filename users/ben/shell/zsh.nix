@@ -21,8 +21,8 @@
       enable = true;
       theme = "darkblood";
       plugins = [
-	"git"
-	"sudo"
+        "git"
+        "sudo"
       ];
     };
   };
