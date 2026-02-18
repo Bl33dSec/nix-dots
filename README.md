@@ -8,5 +8,14 @@
   </a>
 </p>
 
-# Getting started
+# Nix dots
+My personal NixOS configuration using flakes and Home Manager.
 
+## System
+- **Host:** Lenovo ThinkPad X1 gen 9
+- **DE:** COSMIC
+- **Shell:** Zsh
+- **Display Manager:** ly
+
+## Nix installation
+TODO: Add guide on how to install nixos with the minimal image. Using full disk encryption with btrfs for compression. Lanzaboote for Secure Boot.
