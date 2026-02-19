@@ -5,6 +5,7 @@
     ripgrep
     fzf
     fd
+    nodejs
   ];
 
   programs.neovim = {
