@@ -6,6 +6,8 @@
     fzf
     fd
     nodejs
+    cargo
+    gcc
   ];
 
   programs.neovim = {

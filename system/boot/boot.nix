@@ -25,7 +25,14 @@
     };
 
     consoleLogLevel = 0; 
+
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
   };
 }
 

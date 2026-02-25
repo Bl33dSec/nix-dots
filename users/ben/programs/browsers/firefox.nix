@@ -10,6 +10,7 @@
           dashlane 
           wappalyzer
           foxyproxy-standard
+          privacy-badger
         ];
       };
 
@@ -37,8 +38,33 @@
               }
 
               {
-                name = "Hm options";
-                url = "https://nix-community.github.io/home-manager/options.html";
+                name = "Gmail";
+                tags = [ "Gmail" ];
+                url = "https://mail.google.com/";
+              }
+
+              {
+                name = "Claude";
+                tags = [ "ai"  "code" ];
+                url = "https://claude.ai/";
+              }
+
+              {
+                name = "Python";
+                tags = [ "code" ];
+                url = "https://python.org/doc/";
+              }
+
+              {
+                name = "GitHub";
+                tags = [ "code" "version-control" ];
+                url = "https://github.com/";
+              }
+
+              {
+                name = "Notion";
+                tags = [ "planning" "notes" ];
+                url = "https://notion.so/";
               }
             ];
           }
